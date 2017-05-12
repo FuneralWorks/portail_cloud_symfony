@@ -12,6 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Subscriptions
 {
+
+    /**
+    * @var int $client
+    * @ORM\ManyToOne(targetEntity="Client")
+    * @ORM\JoinColumn(name="client", referencedColumnName="id")
+    */
+  private $client;
+
     /**
      * @var int
      *
@@ -120,5 +128,28 @@ class Subscriptions
     public function getSapContractNumber()
     {
         return $this->sapContractNumber;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \PortailCloudBundle\Entity\Client $client
+     * @return Subscriptions
+     */
+    public function setClient(\PortailCloudBundle\Entity\Client $client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \PortailCloudBundle\Entity\Client 
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }

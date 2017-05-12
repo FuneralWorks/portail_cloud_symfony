@@ -8,10 +8,24 @@ use Doctrine\ORM\Mapping as ORM;
  * licences
  *
  * @ORM\Table(name="licences")
- * @ORM\Entity(repositoryClass="PortailCloudBundle\Repository\licencesRepository")
+ * @ORM\Entity(repositoryClass="PortailCloudBundle\Repository\LicencesRepository")
  */
-class licences
+class Licences
 {
+
+    /**
+    *
+    * @var ArrayCollection Products $products
+    * @ORM\ManyToMany(targetEntity="Products", inversedBy="products")
+    * @ORM\JoinTable(name="licences_products",
+    *      joinColumns = {@ORM\JoinColumn(name="licences_id", referencedColumnName="id")},
+    *      inverseJoinColumns = {@ORM\JoinColumn(name="products_id", referencedColumnName="id", unique=true)} 
+    *    )
+    */
+    private $products;
+
+
+
     /**
      * @var int
      *
@@ -57,7 +71,7 @@ class licences
      * Set sku
      *
      * @param string $sku
-     * @return licences
+     * @return Licences
      */
     public function setSku($sku)
     {
@@ -80,7 +94,7 @@ class licences
      * Set designation
      *
      * @param string $designation
-     * @return licences
+     * @return Licences
      */
     public function setDesignation($designation)
     {
@@ -103,7 +117,7 @@ class licences
      * Set quantity
      *
      * @param integer $quantity
-     * @return licences
+     * @return Licences
      */
     public function setQuantity($quantity)
     {
@@ -120,5 +134,9 @@ class licences
     public function getQuantity()
     {
         return $this->quantity;
+    }
+
+    public function __construct() {
+        $this->products = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }

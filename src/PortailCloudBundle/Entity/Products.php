@@ -12,6 +12,19 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Products
 {
+
+    /**
+    *
+    * @var ArrayCollection Subscriptions $subscriptions
+    * @ORM\ManyToMany(targetEntity="Subscriptions", inversedBy="subscriptions")
+    * @ORM\JoinTable(name="products_subscriptions",
+    *      joinColumns = {@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+    *      inverseJoinColumns = {@ORM\JoinColumn(name="subscription_id", referencedColumnName="id", unique=true)} 
+    *    )
+    */
+    private $subscriptions;
+
+
     /**
      * @var int
      *
@@ -21,6 +34,7 @@ class Products
      */
     private $id;
 
+    
     /**
      * @var string
      *
@@ -90,5 +104,9 @@ class Products
     public function getDesignation()
     {
         return $this->designation;
+    }
+
+    public function __construct() {
+        $this->subscriptions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }
