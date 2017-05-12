@@ -1,0 +1,33 @@
+dashboard:
+    path:     /
+    defaults: { _controller: PortailCloudBundle:Default:dashboard }
+abonnements:
+    path:     /abonnements
+    defaults: { _controller: PortailCloudBundle:Default:abonnements }
+produits:
+    path:     /abonnements/{abonnementId}/produits
+    defaults: { _controller: PortailCloudBundle:Produits:produits }
+licences:
+    path:     /abonnements/{abonnementId}/produits/{produitId}/licences
+    defaults: { _controller: PortailCloudBundle:Licences:licences }
+test:
+    path:     /test
+    defaults: { _controller: PortailCloudBundle:Test:testFormulaire }
+# fos_user_security:
+#     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+# fos_user_profile:
+#     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+#     prefix: /profile
+
+# fos_user_register:
+#     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+#     prefix: /register
+
+# fos_user_resetting:
+#     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+#     prefix: /resetting
+
+# fos_user_change_password:
+#     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+#     prefix: /profile

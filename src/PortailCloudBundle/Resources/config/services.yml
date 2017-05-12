@@ -1,0 +1,4 @@
+services:
+#    portail_cloud.example:
+#        class: PortailCloudBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
