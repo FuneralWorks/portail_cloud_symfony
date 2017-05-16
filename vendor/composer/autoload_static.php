@@ -63,6 +63,7 @@ class ComposerStaticInit4b4069725468f446626c8e5953f9724a
         'D' => 
         array (
             'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Bundle\\FixturesBundle\\' => 31,
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
@@ -165,6 +166,10 @@ class ComposerStaticInit4b4069725468f446626c8e5953f9724a
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
         ),
+        'Doctrine\\Bundle\\FixturesBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle',
+        ),
         'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-cache-bundle',
@@ -215,6 +220,10 @@ class ComposerStaticInit4b4069725468f446626c8e5953f9724a
             'Doctrine\\Common\\Inflector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+            'Doctrine\\Common\\DataFixtures' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/data-fixtures/lib',
             ),
             'Doctrine\\Common\\Collections\\' => 
             array (

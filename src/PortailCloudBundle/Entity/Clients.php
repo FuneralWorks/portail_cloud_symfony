@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="client")
  * @ORM\Entity(repositoryClass="PortailCloudBundle\Repository\ClientRepository")
  */
-class Client
+class Clients
 {
    
     /**
@@ -21,6 +21,13 @@ class Client
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+    * @var int $utilisateurs
+    * @ORM\ManyToOne(targetEntity="UtilisateursBundle\Entity\Utilisateurs", inversedBy="clients")
+    * @ORM\JoinColumn(referencedColumnName="id")
+    */
+    private $utilisateurs;
 
     /**
      * @var string
@@ -91,5 +98,28 @@ class Client
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set utilisateurs
+     *
+     * @param \UtilisateursBundle\Entity\Utilisateurs $utilisateurs
+     * @return Client
+     */
+    public function setUtilisateurs(\UtilisateursBundle\Entity\Utilisateurs $utilisateurs = null)
+    {
+        $this->utilisateurs = $utilisateurs;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateurs
+     *
+     * @return \UtilisateursBundle\Entity\Utilisateurs 
+     */
+    public function getUtilisateurs()
+    {
+        return $this->utilisateurs;
     }
 }

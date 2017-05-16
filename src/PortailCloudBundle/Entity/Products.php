@@ -109,4 +109,37 @@ class Products
     public function __construct() {
         $this->subscriptions = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
+    /**
+     * Add subscriptions
+     *
+     * @param \PortailCloudBundle\Entity\Subscriptions $subscriptions
+     * @return Products
+     */
+    public function addSubscription(\PortailCloudBundle\Entity\Subscriptions $subscriptions)
+    {
+        $this->subscriptions[] = $subscriptions;
+
+        return $this;
+    }
+
+    /**
+     * Remove subscriptions
+     *
+     * @param \PortailCloudBundle\Entity\Subscriptions $subscriptions
+     */
+    public function removeSubscription(\PortailCloudBundle\Entity\Subscriptions $subscriptions)
+    {
+        $this->subscriptions->removeElement($subscriptions);
+    }
+
+    /**
+     * Get subscriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSubscriptions()
+    {
+        return $this->subscriptions;
+    }
 }

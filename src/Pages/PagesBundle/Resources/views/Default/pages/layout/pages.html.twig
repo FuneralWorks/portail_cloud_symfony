@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <h1> {{ page.titre}}</h1>
+        <div class="span2">
+            {{ pages.contenu|raw}}
+        </div>
+    </div>
+{% endblock body %}

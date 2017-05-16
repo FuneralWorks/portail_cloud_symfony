@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new PortailCloudBundle\PortailCloudBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new UtilisateursBundle\UtilisateursBundle(),
+            new Pages\PagesBundle\PagesBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

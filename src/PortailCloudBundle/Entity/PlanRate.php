@@ -69,4 +69,27 @@ class PlanRate
     {
         return $this->monthDuration;
     }
+
+    /**
+     * Set product
+     *
+     * @param \PortailCloudBundle\Entity\Products $product
+     * @return PlanRate
+     */
+    public function setProduct(\PortailCloudBundle\Entity\Products $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \PortailCloudBundle\Entity\Products 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
 }

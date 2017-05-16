@@ -15,7 +15,7 @@ class Subscriptions
 
     /**
     * @var int $client
-    * @ORM\ManyToOne(targetEntity="Client")
+    * @ORM\ManyToOne(targetEntity="Clients")
     * @ORM\JoinColumn(name="client", referencedColumnName="id")
     */
   private $client;
@@ -133,10 +133,10 @@ class Subscriptions
     /**
      * Set client
      *
-     * @param \PortailCloudBundle\Entity\Client $client
+     * @param \PortailCloudBundle\Entity\Clients $client
      * @return Subscriptions
      */
-    public function setClient(\PortailCloudBundle\Entity\Client $client)
+    public function setClient(\PortailCloudBundle\Entity\Clients $client)
     {
         $this->client = $client;
 
@@ -146,7 +146,7 @@ class Subscriptions
     /**
      * Get client
      *
-     * @return \PortailCloudBundle\Entity\Client 
+     * @return \PortailCloudBundle\Entity\Clients 
      */
     public function getClient()
     {

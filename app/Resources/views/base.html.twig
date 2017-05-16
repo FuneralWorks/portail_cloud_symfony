@@ -40,6 +40,7 @@
             
             <div class="container-fluid">
                 {% block body %}{% endblock body %}
+                {% render(controller('PagesBundle:Default:menu')) %}
             </div>
             <!-- /.container-fluid -->
         </main>

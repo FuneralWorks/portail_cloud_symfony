@@ -139,4 +139,37 @@ class Licences
     public function __construct() {
         $this->products = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
+    /**
+     * Add products
+     *
+     * @param \PortailCloudBundle\Entity\Products $products
+     * @return Licences
+     */
+    public function addProduct(\PortailCloudBundle\Entity\Products $products)
+    {
+        $this->products[] = $products;
+
+        return $this;
+    }
+
+    /**
+     * Remove products
+     *
+     * @param \PortailCloudBundle\Entity\Products $products
+     */
+    public function removeProduct(\PortailCloudBundle\Entity\Products $products)
+    {
+        $this->products->removeElement($products);
+    }
+
+    /**
+     * Get products
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
 }
